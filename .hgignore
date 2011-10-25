@@ -1,0 +1,6 @@
+syntax: glob
+__pycache__
+*~
+*.swp
+*.pyc
+*.orig
