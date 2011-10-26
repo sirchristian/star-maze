@@ -24,7 +24,7 @@ def main():
     # create the backgound
     background = pygame.Surface(gameSurface.get_size())
     background = background.convert()
-    background.fill((250, 250, 250))
+    background.fill((255, 255, 255))
 
     # blit the background to the display
     gameSurface.blit(background, (0, 0))
@@ -42,6 +42,13 @@ def main():
         random.randint(0, gameSurface.get_height()))
     starGroup = pygame.sprite.GroupSingle(star)
 
+    # setup the goal star
+    goal = pygame.image.load('star_outline.png')
+    goalRec = goal.get_rect(
+        centerx = random.randint(0, gameSurface.get_width()),
+        centery = random.randint(0, gameSurface.get_height()))
+    background.blit(goal,goalRec)
+    
     # game loop
     gameOver = False
     while not gameOver:
